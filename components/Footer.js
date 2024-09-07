@@ -60,7 +60,7 @@ export default function Footer() {
             </div>
             <div>
               <h3 className="text-lg text-black font-medium tracking-tight">
-                Main Gig
+                NoCode Boards
               </h3>
               <ul role="list" className="mt-4 space-y-1">
                 <li>
@@ -71,6 +71,18 @@ export default function Footer() {
                     rel="noopener noreferrer"
                   >
                     Tustin Recruiting
+                  </a>
+                </li>
+              </ul>
+              <ul role="list" className="mt-4 space-y-1">
+                <li>
+                  <a
+                    href="https://nocodejobs.org/"
+                    className="hover:text-black"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    No Code Jobs
                   </a>
                 </li>
               </ul>
@@ -94,21 +106,22 @@ export default function Footer() {
         </div>
       </div>
       <div className="bg-white">
-        <div className="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-6 ">
-          <div className="border-t pt-6">
-            <p className="text-sm text-neutral-600 lg:col-span-2 ">
-              © 2024 Foster City Jobs. All rights reserved. Foster City Jobs is not
-              affiliated with OpenAI, Replit, Cursor, Claude, Vercel, Astro or Tailwind teams, nor is it endorsed by or
-              sponsored by them. It is a side project by <a
-                className="text-sm text-black hover:text-accent-400 underline"
-                href="https://www.linkedin.com/in/will-gordon1/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Will Gordon</a>. Newport Beach, California.
-            </p>
-          </div>
-        </div>
-      </div>
+  <div className="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-6">
+    <div className="border-t pt-6">
+      <p className="text-sm text-neutral-600 lg:col-span-2">
+        © 2024 Foster City Jobs. All rights reserved. Foster City Jobs is not
+        affiliated with OpenAI, Replit, Cursor, Claude, Vercel, Lexington Themes, Astro or Tailwind teams, nor is it endorsed by or
+        sponsored by them. It is a side project by <a
+          className="text-sm text-black hover:text-accent-400 underline"
+          href="https://www.linkedin.com/in/will-gordon1/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Will Gordon</a>.
+      </p>
+      <p className="text-sm text-neutral-600 lg:col-span-2 mt-4">☕️ & 🏋️ & 🐶 in Newport Beach, California.</p> {/* Add margin here */}
+    </div>
+  </div>
+</div>
     </footer>
   );
 }

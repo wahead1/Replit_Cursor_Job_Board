@@ -26,10 +26,20 @@ export default function JobBoard({ jobs }) {
     return `https://${logo}`;
   };
 
+  // Function to format salary with commas
+  const formatSalary = (amount, currency) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: currency || 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
+
   return (
-    <section className="max-w-6xl mx-auto px-8 md:px-32 py-8"> {/* Changed py-4 to py-8 */}
+    <section className="max-w-6xl mx-auto px-8 md:px-32 py-8">
       <div className="border-gray-200 pb-5">
-        <h3 className="text-2xl lg:text-3xl font-semibold leading-6 text-slate-900 mb-4">Latest jobs</h3> {/* Increased text size */}
+        <h3 className="text-2xl lg:text-3xl font-semibold leading-6 text-slate-900 mb-4">Latest jobs</h3>
         <input
           type="text"
           placeholder="Search jobs..."
@@ -68,15 +78,6 @@ export default function JobBoard({ jobs }) {
                     <dt className="sr-only">Company</dt>
                     <dd className="text-xs font-semibold leading-6 text-slate-900">{job.company}</dd>
                   </div>
-                  <div className="col-start-3 row-start-2 -ml-2.5 flex-auto sm:ml-0 sm:pl-6">
-                    <dt className="sr-only">Location</dt>
-                    <dd className="flex items-center text-xs leading-6 text-slate-500">
-                      <svg viewBox="0 0 2 2" aria-hidden="true" className="mr-2 h-0.5 w-0.5 flex-none fill-slate-400 sm:hidden">
-                        <circle cx="1" cy="1" r="1"></circle>
-                      </svg>
-                      {job.city}, {job.state}, {job.country}
-                    </dd>
-                  </div>
                   <div className="col-span-2 col-start-1 w-full flex-none">
                     <dt className="sr-only">Title</dt>
                     <dd className="text-base font-semibold leading-6 text-slate-900">
@@ -86,17 +87,20 @@ export default function JobBoard({ jobs }) {
                       </Link>
                     </dd>
                   </div>
+                  <div className="col-start-1 row-start-3 sm:col-start-3 sm:row-start-2 flex-auto sm:pl-6">
+                    <dt className="sr-only">Location</dt>
+                    <dd className="flex items-center text-xs leading-6 text-slate-500 sm:justify-end">
+                      {job.city}, {job.state}, {job.country}
+                    </dd>
+                  </div>
                   <div className="col-start-1 mr-2.5 flex-none">
                     <dt className="sr-only">Type</dt>
                     <dd className="text-xs leading-6 text-slate-500">{job.employment_type}</dd>
                   </div>
-                  <div className="col-span-3 -ml-2.5 flex-none">
+                  <div className="col-span-3 flex-none">
                     <dt className="sr-only">Salary</dt>
                     <dd className="flex items-center text-xs leading-6 text-slate-500">
-                      <svg viewBox="0 0 2 2" aria-hidden="true" className="mr-2 h-0.5 w-0.5 flex-none fill-slate-400">
-                        <circle cx="1" cy="1" r="1"></circle>
-                      </svg>
-                      {job.salary_currency} {job.salary_amount} {job.salary_unit}
+                      {formatSalary(job.salary_amount, job.salary_currency)} {job.salary_unit}
                     </dd>
                   </div>
                 </dl>
