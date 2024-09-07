@@ -51,15 +51,9 @@ export default function Header() {
           >
             <Link
               className="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 lg:ml-auto"
-              href="/#features"
+              href="/special-thanks"
             >
               Special Thanks
-            </Link>
-            <Link
-              className="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
-              href="/#pricing"
-            >
-              About
             </Link>
             <Link
               className="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
@@ -68,14 +62,14 @@ export default function Header() {
               Post a Job
             </Link>
             <div className="inline-flex items-center gap-2 list-none lg:ml-auto">
-            <Link
-            target="_blank"
+              <Link
+                target="_blank"
                 href="https://www.linkedin.com/in/will-gordon1/"
-                class="block px-4 py-2 mt-2 text-sm font-medium text-black md:mt-0 hover:text-accent-400 focus:outline-none focus:shadow-outline">
+                className="block px-4 py-2 mt-2 text-sm font-medium text-black md:mt-0 hover:text-accent-400 focus:outline-none focus:shadow-outline">
                 LinkedIn
               </Link>
               <Link
-              target="_blank"
+                target="_blank"
                 href="https://github.com/wcgordon1/Replit_Cursor_Job_Board"
                 className="inline-flex items-center h-8 justify-center px-4 py-2 text-sm font-medium text-black bg-gray-100 rounded-lg group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-gray-50 active:bg-gray-200 active:text-accent-400 focus-visible:outline-black"
               >

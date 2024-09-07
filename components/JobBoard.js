@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function JobBoard({ jobs }) {
@@ -16,6 +17,14 @@ export default function JobBoard({ jobs }) {
       (isSalarySearch && job.salary_amount >= parseInt(searchTermLower))
     );
   });
+
+  // Function to validate and format the logo URL
+  const getLogoUrl = (logo) => {
+    if (!logo) return null;
+    if (logo.startsWith('http://') || logo.startsWith('https://')) return logo;
+    if (logo.startsWith('//')) return `https:${logo}`;
+    return `https://${logo}`;
+  };
 
   return (
     <section className="max-w-6xl mx-auto px-8 md:px-32 py-8"> {/* Changed py-4 to py-8 */}
@@ -36,7 +45,22 @@ export default function JobBoard({ jobs }) {
               <div className="absolute inset-x-4 -inset-y-px bg-slate-50 opacity-0 group-hover:opacity-100 sm:-inset-x-6 rounded-2xl lg:-inset-x-8 duration-200"></div>
               <div className="relative flex items-center">
                 <div className="relative h-[3.125rem] w-[3.125rem] sm:h-[3.75rem] sm:w-[3.75rem] flex-none">
-                  <img className="absolute inset-0 h-full w-full rounded-full object-cover" src={job.company_logo || "/logos/default.svg"} alt={`${job.company} Logo`} />
+                  {getLogoUrl(job.company_logo) ? (
+                    <Image
+                      src={getLogoUrl(job.company_logo)}
+                      alt={`${job.company} Logo`}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-full"
+                      unoptimized
+                    />
+                  ) : (
+                    <div className="absolute inset-0 rounded-full bg-gray-200 flex items-center justify-center">
+                      <span className="text-xl font-bold text-gray-500">
+                        {job.company.charAt(0)}
+                      </span>
+                    </div>
+                  )}
                   <div className="absolute inset-0 rounded-full ring-1 ring-inset ring-black/[0.08]"></div>
                 </div>
                 <dl className="ml-4 flex-auto grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto] sm:items-center">
@@ -56,7 +80,7 @@ export default function JobBoard({ jobs }) {
                   <div className="col-span-2 col-start-1 w-full flex-none">
                     <dt className="sr-only">Title</dt>
                     <dd className="text-base font-semibold leading-6 text-slate-900">
-                      <Link href={`/jobs/${job.id}`}>
+                      <Link href={`/jobs/${job.slug}`}>
                         <span className="absolute -inset-x-4 inset-y-[calc(-1*(theme(spacing.6)+1px))] sm:-inset-x-6 sm:rounded-2xl lg:-inset-x-8"></span>
                         {job.title}
                       </Link>

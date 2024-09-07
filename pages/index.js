@@ -3,6 +3,7 @@ import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import JobBoard from '../components/JobBoard'
+import Footer from '../components/Footer'
 
 export default function Home() {
   const [jobs, setJobs] = useState([])
@@ -27,9 +28,10 @@ export default function Home() {
     <>
       <Header />
       <Hero />
-      <div className="pt-4 pb-8"> {/* Added padding instead of negative margin */}
+      <div className="pt-4 pb-8">
         <JobBoard jobs={jobs} />
       </div>
+      <Footer />
     </>
   )
 }
