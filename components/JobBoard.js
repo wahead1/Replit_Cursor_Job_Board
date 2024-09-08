@@ -81,10 +81,10 @@ export default function JobBoard({ jobs, isLoading }) {
         ) : (
           filteredJobs.map(job => (
             <li key={job.id}>
-              <div className="group relative py-6 sm:rounded-2xl">
-                <div className="absolute inset-x-4 -inset-y-px bg-slate-50 opacity-0 group-hover:opacity-100 sm:-inset-x-6 rounded-2xl lg:-inset-x-8 duration-200"></div>
+              <div className="group relative py-8 sm:rounded-2xl">
+                <div className="absolute inset-x-4 -inset-y-px bg-stone-100 opacity-0 group-hover:opacity-100 sm:-inset-x-6 rounded-2xl lg:-inset-x-8 duration-200"></div>
                 <div className="relative flex items-center">
-                  <div className="relative h-[3.125rem] w-[3.125rem] sm:h-[3.75rem] sm:w-[3.75rem] flex-none">
+                  <div className="relative h-[3.5rem] w-[3.5rem] sm:h-[4rem] sm:w-[4rem] flex-none">
                     {getLogoUrl(job.company_logo) ? (
                       <Image
                         src={getLogoUrl(job.company_logo)}
@@ -96,7 +96,7 @@ export default function JobBoard({ jobs, isLoading }) {
                       />
                     ) : (
                       <div className="absolute inset-0 rounded-full bg-gray-200 flex items-center justify-center">
-                        <span className="text-xl font-bold text-gray-500">
+                        <span className="text-xl-underline font-bold text-gray-500">
                           {job.company.charAt(0)}
                         </span>
                       </div>
@@ -106,11 +106,11 @@ export default function JobBoard({ jobs, isLoading }) {
                   <dl className="ml-4 flex-auto grid grid-cols-[auto_1fr_auto] sm:grid-cols-[auto_1fr_auto] sm:items-center">
                     <div className="col-span-2 sm:col-span-1 flex-none">
                       <dt className="sr-only">Company</dt>
-                      <dd className="text-xs font-semibold leading-6 text-slate-900">{job.company}</dd>
+                      <dd className="text-xs font-semibold leading-6 text-slate-600">{job.company}</dd>
                     </div>
                     <div className="col-span-2 col-start-1 w-full flex-none">
                       <dt className="sr-only">Title</dt>
-                      <dd className="text-base font-semibold leading-6 text-slate-900">
+                      <dd className="text-base font-semibold leading-6 text-black">
                         <Link href={`/jobs/${job.slug}`}>
                           <span className="absolute -inset-x-4 inset-y-[calc(-1*(theme(spacing.6)+1px))] sm:-inset-x-6 sm:rounded-2xl lg:-inset-x-8"></span>
                           {job.title}
@@ -119,18 +119,14 @@ export default function JobBoard({ jobs, isLoading }) {
                     </div>
                     <div className="col-start-1 row-start-3 sm:col-start-3 sm:row-start-2 flex-auto sm:pl-6">
                       <dt className="sr-only">Location</dt>
-                      <dd className="flex items-center text-xs leading-6 text-slate-500 sm:justify-end">
+                      <dd className="flex items-center text-xs leading-6 text-gray-500 sm:justify-end">
                         {job.city}, {job.state}, {job.country}
                       </dd>
                     </div>
-                    <div className="col-start-1 mr-2.5 flex-none">
-                      <dt className="sr-only">Type</dt>
-                      <dd className="text-xs leading-6 text-slate-500">{job.employment_type}</dd>
-                    </div>
                     <div className="col-span-3 flex-none">
                       <dt className="sr-only">Salary</dt>
-                      <dd className="flex items-center text-xs leading-6 text-slate-500">
-                        {formatSalary(job.salary_amount, job.salary_currency)} {job.salary_unit}
+                      <dd className="flex items-center text-xs leading-6 text-gray-500">
+                        {formatSalary(job.salary_amount, job.salary_currency)} Annually
                       </dd>
                     </div>
                   </dl>

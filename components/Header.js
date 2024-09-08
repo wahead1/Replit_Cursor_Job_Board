@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Mailto from 'react-mailto-link';
+import Image from 'next/image';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,11 +12,13 @@ export default function Header() {
         <div className="relative flex flex-col w-full py-5 mx-auto bg-white md:items-center md:justify-between md:flex-row md:px-6">
           <div className="flex flex-row items-center justify-between lg:justify-start">
             <Link href="/" className="text-black inline-flex items-center gap-3">
-              <svg className="h-4" viewBox="0 0 78 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M55.5 0H77.5L58.5 32H36.5L55.5 0Z" className="ccustom" fill="#283CFF"></path>
-                <path d="M35.5 0H51.5L32.5 32H16.5L35.5 0Z" className="ccompli1" fill="#5263FF"></path>
-                <path d="M19.5 0H31.5L12.5 32H0.5L19.5 0Z" className="ccompli2" fill="#808CFF"></path>
-              </svg>
+            <Image
+            src="/logotime.png"
+            alt="Logo"
+            width={28} // Adjust width based on your desired size
+            height={28} // Adjust height as needed
+            priority={true} // Ensures the logo is loaded quickly
+          />
               <span className="font-bold font-display">Foster City Jobs</span>
             </Link>
             <button
