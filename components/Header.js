@@ -68,6 +68,13 @@ export default function Header() {
             >
               About
             </Link>
+            <Link
+            target="_blank"
+              className="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
+              href="https://www.linkedin.com/in/will-gordon1/"
+            >
+              LinkedIn
+            </Link>
             <div className="inline-flex items-center gap-2 list-none lg:ml-auto">
               <Link
                 target="_blank"
