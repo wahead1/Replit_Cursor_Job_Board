@@ -4,6 +4,12 @@
 - TailwindCSS
 - Supabase
 - Vercel
+- Lexington Themes - https://lexingtonthemes.com/
+- Replit
+- Cursor
+- OpenAI
+- Resend
+- Formidable (for forms)
 
 ### You will need to know how to set up a coding environment and have some basic knowledge of how coding works if you want to make this site your own. 
 
