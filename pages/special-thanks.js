@@ -7,7 +7,7 @@ export default function SpecialThanks() {
   return (
     <>
       <Head>
-        <title>The following made this possible</title>
+        <title>Special Thanks - Foster City Jobs</title>
         <meta name="description" content="Special thanks to the technologies and people that made this project possible" />
       </Head>
       <Header />
@@ -15,56 +15,55 @@ export default function SpecialThanks() {
         <div className="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24 scroll-mt-12">
           <div className="mx-auto max-w-xl text-center">
             <div>
-              <h1 className="text-4xl tracking-tight font-medium text-black md:text-5xl font-display">
-                Thank You So Much 🎉
-              </h1>
+              <p className="text-4xl tracking-tight font-medium text-black md:text-5xl font-display">
+                Special Thanks to Our Tech Stack
+              </p>
               <p className="mt-4 text-lg text-na mx-auto tracking-tight text-gray-500">
-                This project was made possible by the following technologies and the amazing teams behind them.
+                This project was made possible by the following technologies and the amazing teams behind them. It is not endorsed by or sponsored by anyone on this list.
               </p>
             </div>
           </div>
           <div>
-            <div className="mx-auto max-w-7xl pt-12">
+            <div className="mx-auto max-w-7xl pt-24">
               <h2 className="sr-only">Features.</h2>
               <div>
                 <div className="grid gap-12 grid-cols-1 lg:space-y-0 lg:text-center md:grid-cols-3">
                   {[
                     {
                       title: "Michael Andreuzza",
-                      description: "This design looks so good because of Michael Andreuzza. I knocked off his AstroSaaS Template. If you'd like to build something similar, check out Lexington Themes or reach out to him for custom work.",
-                      link: "https://example.com/michael-andreuzza" 
+                      description: "For designing this awesome website. I ran his work through AI with his blessing. GNU License. You ROCK!"
+                    },
+                    {
+                      title: "Tailwind CSS",
+                      description: "Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces."
+                    },
+                    {
+                      title: "Supabase",
+                      description: "Supabase is an open source Firebase alternative, providing all the backend services you need to build a product."
                     },
                     {
                       title: "Replit",
-                      description: "Truly remarkable what Amjad is doing for people breaking into coding. I've been a Replit free plan user for years. Just upgraded and their AI Agent does wonders for those who aren't familiar with setting up a proper environment."
+                      description: "For making it easier for people to code around the world. Their new AI Agent is going to help non-technical people build awesome products."
                     },
                     {
                       title: "Cursor",
-                      description: "Simply amazing product. This is the 5th job board I've built in the last 3 days using it. I just paid to support them. But all of this could have been done on the free plan. Very generous."
+                      description: "Wow! The pricing section is a little harsh! Such an amazing AI coding assistant. I built this at lightning speed. Well done!"
                     },
                     {
                       title: "OpenAI",
-                      description: "What can you say that hasn't been said? Been working with their API for years. Helped me build and sell a few projects. I talk to ChatGPT everyday, 4+ hours per day."
+                      description: "What can I say that hasn't already been said? Been using OpenAI for years. Incredible platform. Thank you for all your hard work!"
                     },
                     {
-                      title: "Anthropic",
-                      description: "Claude is a serious competitor to OpenAI. I've been using Claude for a few months now. And noticed some serious improvement with Claude 3.5 Sonnet. The AI games have begun!"
-                    },
-                    {
-                      title: "Vercel",
-                      description: "Similar to Replit in that they make coding easier. One click deployments and a really nice interface for managing projects. Let's hope nobody DDOS attacks me so I can stay on their free plan."
-                    },
-                    {
-                        title: "Supabase",
-                        description: "First time every using Supabase. Seems like a no brainer for Postgres. I highly doubt I'll need to upgrade with this project. Will use on the next project I launch. Very well done."
+                        title: "Anthropic",
+                        description: "Claude 3.5 Sonnet is a serious LLM competitor for OpenAI. Incredibly powerful. The AI games have begun!!"
                       },
                       {
                         title: "Free Code Camp",
-                        description: "When I started to learn how to code, I thought about a bootcamp. This is free, it feels like school, but guess what? You'll learn! I can't stress how important the process of learning is."
+                        description: "For helping me learn how to code many moons ago. A free platform that changed my life. Thank you!"
                       },
                       {
-                        title: "CodeCademy",
-                        description: "Besides sitting with problems for hours and sometimes days, CodeCademy is the best resource to get fundamentals down. Ultimately, nothing is going to do the work for you. But, they make it fun."
+                        title: "Codecademy",
+                        description: "My personal favoritet learning tool. Ultimately, you'll have to find what works for you. But Codecademy is one of the best."
                       }
                   ].map((feature, index) => (
                     <div key={index}>
@@ -83,13 +82,6 @@ export default function SpecialThanks() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="mx-auto max-w-xl mt-24 text-center">
-            <div>
-              <p className="text-4xl tracking-tight font-medium text-black md:text-5xl font-display">
-                Thank you!
-              </p>
             </div>
           </div>
         </div>

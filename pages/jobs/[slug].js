@@ -97,19 +97,23 @@ export default function JobDetails({ job }) {
       <main className="max-w-6xl mx-auto px-8 md:px-32 py-8">
         <div className="flex flex-col items-center mb-8">
           {getLogoUrl(job.company_logo) ? (
-            <Image
-              src={getLogoUrl(job.company_logo)}
-              alt={`${job.company} logo`}
-              width={100}
-              height={100}
-              className="rounded-full object-cover mb-4"
-              unoptimized
-            />
+            <div className="relative w-[100px] h-[100px] mb-4">
+              <Image
+                src={getLogoUrl(job.company_logo)}
+                alt={`${job.company} logo`}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-full"
+                unoptimized
+              />
+              <div className="absolute inset-0 rounded-full ring-1 ring-inset ring-black/[0.08]"></div>
+            </div>
           ) : (
-            <div className="w-[100px] h-[100px] bg-gray-200 rounded-full flex items-center justify-center mb-4">
+            <div className="w-[100px] h-[100px] bg-gray-200 rounded-full flex items-center justify-center mb-4 relative">
               <span className="text-2xl font-bold text-gray-500">
                 {job.company.charAt(0)}
               </span>
+              <div className="absolute inset-0 rounded-full ring-1 ring-inset ring-black/[0.08]"></div>
             </div>
           )}
           <h1 className="text-3xl font-bold text-center mb-2">{job.title}</h1>

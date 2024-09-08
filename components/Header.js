@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Mailto from 'react-mailto-link';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,7 +58,7 @@ export default function Header() {
             </Link>
             <Link
               className="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
-              href="/faq"
+              href="/post-a-job"
             >
               Post a Job
             </Link>
@@ -68,12 +69,18 @@ export default function Header() {
               About
             </Link>
             <div className="inline-flex items-center gap-2 list-none lg:ml-auto">
-              <Link
-                target="_blank"
-                href="https://www.linkedin.com/in/will-gordon1/"
-                className="block px-4 py-2 mt-2 text-sm font-medium text-black md:mt-0 hover:text-accent-400 focus:outline-none focus:shadow-outline">
-                LinkedIn
-              </Link>
+              <Mailto
+                email="will@tustinrecruiting.com"
+                options={{
+                  cc: '',
+                  bcc: '',
+                  subject: 'Inquiry from Foster City Jobs',
+                  body: 'Hello,'
+                }}
+                className="block px-4 py-2 mt-2 text-sm font-medium text-black md:mt-0 hover:text-accent-400 focus:outline-none focus:shadow-outline"
+              >
+                Email
+              </Mailto>
               <Link
                 target="_blank"
                 href="https://github.com/wcgordon1/Replit_Cursor_Job_Board"

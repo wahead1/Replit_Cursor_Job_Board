@@ -1,5 +1,4 @@
-import { useState, useCallback } from 'react';
-import { useDropzone } from 'react-dropzone';
+import { useState } from 'react';
 
 export default function JobApplicationForm({ jobId, jobTitle, companyName }) {
   const [name, setName] = useState('');
@@ -9,20 +8,6 @@ export default function JobApplicationForm({ jobId, jobTitle, companyName }) {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
-
-  const onDrop = useCallback(acceptedFiles => {
-    setResume(acceptedFiles[0]);
-  }, []);
-
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
-    accept: {
-      'application/pdf': ['.pdf'],
-      'application/msword': ['.doc'],
-      'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx']
-    },
-    multiple: false
-  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,6 +20,8 @@ export default function JobApplicationForm({ jobId, jobTitle, companyName }) {
     formData.append('email', email);
     formData.append('linkedin', linkedin);
     formData.append('jobId', jobId);
+    formData.append('jobTitle', jobTitle);
+    formData.append('companyName', companyName);
     if (resume) {
       formData.append('resume', resume);
     }
@@ -112,40 +99,13 @@ export default function JobApplicationForm({ jobId, jobTitle, companyName }) {
         <label htmlFor="resume" className="block text-sm font-medium text-gray-700">
           Resume
         </label>
-        <div {...getRootProps()} className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md hover:border-black transition duration-200 ease-in-out">
-          <div className="space-y-1 text-center">
-            <svg
-              className="mx-auto h-12 w-12 text-gray-400"
-              stroke="currentColor"
-              fill="none"
-              viewBox="0 0 48 48"
-              aria-hidden="true"
-            >
-              <path
-                d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <div className="flex text-sm text-gray-600">
-              <label
-                htmlFor="file-upload"
-                className="relative cursor-pointer bg-white rounded-md font-medium text-black hover:text-gray-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-black"
-              >
-                <span>Upload a file</span>
-                <input {...getInputProps()} />
-              </label>
-              <p className="pl-1">or drag and drop</p>
-            </div>
-            <p className="text-xs text-gray-500">PDF, DOC, DOCX up to 10MB</p>
-          </div>
-        </div>
-        {resume && (
-          <p className="mt-2 text-sm text-gray-500">
-            Selected file: {resume.name}
-          </p>
-        )}
+        <input
+          type="file"
+          id="resume"
+          onChange={(e) => setResume(e.target.files[0])}
+          className={inputClassName}
+          accept=".pdf,.doc,.docx"
+        />
       </div>
       <div className="flex justify-end">
         <button
