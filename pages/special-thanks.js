@@ -31,7 +31,7 @@ export default function SpecialThanks() {
                   {[
                     {
                       title: "Michael Andreuzza",
-                      description: "For designing this awesome website. I ran his work through AI with his blessing. GNU License. You ROCK!"
+                      description: "For designing this awesome website. I ran his work through AI with his blessing. GNU General Public License. You ROCK!"
                     },
                     {
                       title: "Tailwind CSS",

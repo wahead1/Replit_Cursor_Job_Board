@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs'
 import { SessionContextProvider } from '@supabase/auth-helpers-react'
+import { Analytics } from '@vercel/analytics/react'
 import { useState } from 'react'
 
 function MyApp({ Component, pageProps }) {
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }) {
       initialSession={pageProps.initialSession}
     >
       <Component {...pageProps} />
+      <Analytics />
     </SessionContextProvider>
   )
 }
