@@ -31,9 +31,9 @@ export default function About() {
                 <Image
                   alt="Foster City Jobs dashboard"
                   className="border border-gray-200 lg:rounded-3xl object-cover rounded shadow-2xl"
-                  src="/images/dashboard.svg"
-                  width={500}
-                  height={300}
+                  src="/og-image.jpeg"
+                  width={2312}
+                  height={1468}
                 />
               </div>
             </div>

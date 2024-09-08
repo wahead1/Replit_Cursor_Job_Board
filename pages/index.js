@@ -41,14 +41,14 @@ export default function Home() {
         <meta property="og:url" content="https://fostercityjobs.com/" />
         <meta property="og:title" content="Foster City Jobs | Find Your Next Career Opportunity" />
         <meta property="og:description" content="Discover exciting job opportunities in Foster City and surrounding areas. Connect with top employers and take the next step in your career journey." />
-        <meta property="og:image" content="https://fostercityjobs.com/og-image.jpg" />
+        <meta property="og:image" content="/og-image.jpeg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://fostercityjobs.com/" />
         <meta property="twitter:title" content="Foster City Jobs | Find Your Next Career Opportunity" />
         <meta property="twitter:description" content="Discover exciting job opportunities in Foster City and surrounding areas. Connect with top employers and take the next step in your career journey." />
-        <meta property="twitter:image" content="https://fostercityjobs.com/og-image.jpg" />
+        <meta property="twitter:image" content="/og-image.jpeg" />
       </Head>
       <Header />
       <Hero />

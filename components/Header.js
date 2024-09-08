@@ -69,18 +69,6 @@ export default function Header() {
               About
             </Link>
             <div className="inline-flex items-center gap-2 list-none lg:ml-auto">
-              <Mailto
-                email="will@tustinrecruiting.com"
-                options={{
-                  cc: '',
-                  bcc: '',
-                  subject: 'Inquiry from Foster City Jobs',
-                  body: 'Hello,'
-                }}
-                className="block px-4 py-2 mt-2 text-sm font-medium text-black md:mt-0 hover:text-accent-400 focus:outline-none focus:shadow-outline"
-              >
-                Email
-              </Mailto>
               <Link
                 target="_blank"
                 href="https://github.com/wcgordon1/Replit_Cursor_Job_Board"
